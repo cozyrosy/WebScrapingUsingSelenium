@@ -4,7 +4,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import csv
 import pandas as pd
-
+import os
 
 SERVICE_ACCOUNT_FILE = 'keys.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -34,6 +34,13 @@ for row in values[1:]:
 
 # A function to scrape the webpage.
 def scrape_app_details(app_name, country, language):
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
+
     url = f"https://play.google.com/store/apps/details?id={app_name}&gl={country}&hl={language}"
     driver = webdriver.Chrome()
     driver.get(url)
