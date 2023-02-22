@@ -24,11 +24,11 @@ Run the script. <br>
 This will generate a CSV file with the app details in the same directory.
 
 <h2>Notes</h2>
-This script uses Selenium to scrape data from Google Play Store. <br>
-Therefore, it requires an internet connection and may take some time to run depending on the number of apps being scraped.<br>
+&nbsp;&nbsp; 1. This script uses Selenium to scrape data from Google Play Store.
+&nbsp;&nbsp;&nbsp;Therefore, it requires an internet connection and may take some time to run depending on the number of apps being scraped.<br>
 
-If the app details cannot be found, the corresponding fields in the CSV file will be left blank.<br>
+2. If the app details cannot be found, the corresponding fields in the CSV file will be left blank.<br>
 
-The CSV file will be overwritten each time the script is run.<br>
+3. The CSV file will be overwritten each time the script is run.<br>
 
-This script has been tested on Windows 10 using Python 3.9.0 and ChromeDriver 95.0.4638.17. <br>
+
